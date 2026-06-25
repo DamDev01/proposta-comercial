@@ -1,0 +1,1070 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Caminhos para Crescer Digitalmente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #020f0a;
+    --bg-soft: #061b12;
+    --panel: #082117;
+    --line: rgba(230,255,238,0.14);
+    --line-strong: rgba(244,209,103,0.36);
+    --ink: #F5FFF7;
+    --ink-dim: #D5EADB;
+    --ink-faint: #9DB7A5;
+    --purple: #041A11;
+    --purple-bright: #00FF8A;
+    --magenta: #00FF8A;
+    --magenta-soft: rgba(0,255,138,0.10);
+    --gold: #F6D36B;
+    --gold-soft: rgba(246,211,107,0.14);
+    --serif: 'Fraunces', serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background:
+      radial-gradient(ellipse 900px 600px at 15% -5%, rgba(107,63,184,0.30), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 20%, rgba(232,52,140,0.14), transparent 60%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .wrap{ position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding:110px 0 90px; }
+  .eyebrow{
+    font-family: var(--mono); font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase;
+    color: var(--magenta); display:flex; align-items:center; gap:10px; margin-bottom:28px;
+  }
+  .eyebrow::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--magenta); box-shadow:0 0 12px var(--magenta); }
+
+  h1{
+    font-family: var(--serif);
+    font-weight:600;
+    font-size: clamp(40px, 5.4vw, 68px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    max-width: 880px;
+  }
+  h1 em{
+    font-style: italic; font-weight:500;
+    background: linear-gradient(100deg, var(--magenta), var(--gold));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  .hero-sub{
+    margin-top:26px; max-width:600px; font-size:18px; color:var(--ink-dim); line-height:1.6;
+  }
+
+  .hero-meta{
+    margin-top:56px; display:flex; gap:48px; flex-wrap:wrap;
+    padding-top:32px; border-top:1px solid var(--line);
+  }
+  .meta-item .meta-label{ font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); }
+  .meta-item .meta-value{ font-family:var(--serif); font-size:20px; margin-top:6px; }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{ padding:90px 0; border-top:1px solid var(--line); }
+  .section-head{ margin-bottom:56px; max-width:680px; }
+  .section-tag{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color: var(--ink-faint); margin-bottom:16px; display:block;
+  }
+  .section h2{
+    font-family:var(--serif); font-weight:600; font-size: clamp(28px,3.4vw,40px); line-height:1.12;
+  }
+  .section-head p{ margin-top:16px; color:var(--ink-dim); font-size:16px; max-width:560px; }
+
+  /* ---------- THE THREE PATHS ---------- */
+  .paths{
+    display:grid; grid-template-columns: 1fr 1.12fr 1fr; gap:0; align-items:stretch;
+    border-radius:24px; overflow:hidden; border:1px solid var(--line-strong);
+  }
+  .path{
+    background: var(--panel);
+    padding:40px 32px;
+    display:flex; flex-direction:column;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .path:last-child{ border-right:none; }
+
+  .path--hero{
+    background: linear-gradient(160deg, #2C1A4A 0%, #221537 60%, #2A1530 100%);
+    padding-top:28px;
+    z-index:2;
+    box-shadow: 0 30px 70px -20px rgba(232,52,140,0.35);
+  }
+  .path--hero::before{
+    content:"MAIS ESCOLHIDO";
+    position:absolute; top:0; left:0; right:0;
+    background: linear-gradient(100deg, var(--magenta), #B8268F);
+    color:#fff; text-align:center; font-family:var(--mono); font-size:11px;
+    letter-spacing:0.16em; padding:9px 0; font-weight:500;
+  }
+
+  .path-kicker{ font-family:var(--mono); font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--magenta); }
+  .path--hero .path-kicker{ color:var(--gold); }
+
+  .path-name{ font-family:var(--serif); font-size:27px; font-weight:600; margin-top:10px; line-height:1.15; }
+  .path-desc{ color:var(--ink-dim); font-size:14.5px; margin-top:12px; line-height:1.55; min-height:66px; }
+
+  .path-price{ margin-top:28px; padding-top:24px; border-top:1px solid var(--line); }
+  .price-label{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); }
+  .price-value{ font-family:var(--serif); font-size:34px; margin-top:6px; }
+  .price-value small{ font-family:var(--sans); font-size:14px; color:var(--ink-faint); font-weight:500; }
+  .price-note{ font-size:12.5px; color:var(--ink-faint); margin-top:6px; }
+
+  .path-list{ list-style:none; margin-top:26px; display:flex; flex-direction:column; gap:13px; flex:1; }
+  .path-list li{ font-size:14px; color:var(--ink-dim); display:flex; gap:10px; line-height:1.45; }
+  .path-list li::before{ content:"—"; color:var(--magenta); flex-shrink:0; }
+  .path--hero .path-list li::before{ color:var(--gold); }
+
+  .path-cta{
+    margin-top:28px; text-align:center; padding:13px; border-radius:10px;
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase;
+    border:1px solid var(--line-strong); color:var(--ink-dim);
+  }
+  .path--hero .path-cta{
+    background: linear-gradient(100deg, var(--magenta), #C92A93);
+    color:#fff; border:none; font-weight:500;
+  }
+
+  /* ---------- ANCHOR / MATH STRIP ---------- */
+  .anchor-strip{
+    margin-top:28px; padding:26px 30px; border-radius:16px;
+    background: var(--bg-soft); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+  }
+  .anchor-strip .anchor-text{ font-size:14.5px; color:var(--ink-dim); max-width:560px; }
+  .anchor-strip .anchor-text strong{ color:var(--ink); font-weight:600; }
+  .anchor-num{ font-family:var(--serif); font-size:30px; color:var(--gold); white-space:nowrap; }
+
+  /* ---------- À LA CARTE TABLE ---------- */
+  .carte-grid{ display:grid; grid-template-columns:1.35fr 1fr 1fr; gap:20px; }
+  .carte-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:30px 26px;
+  }
+  .carte-icon{ font-size:22px; }
+  .carte-card h3{ font-family:var(--serif); font-size:20px; margin-top:16px; font-weight:600; }
+  .carte-card ul{ list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:9px; }
+  .carte-card li{ font-size:13.5px; color:var(--ink-dim); padding-left:16px; position:relative; line-height:1.5;}
+  .carte-card li::before{ content:"•"; color:var(--ink-faint); position:absolute; left:0; }
+  .carte-price{ margin-top:20px; padding-top:18px; border-top:1px solid var(--line); font-family:var(--serif); font-size:22px; }
+  .carte-price small{ font-family:var(--sans); font-size:13px; color:var(--ink-faint); }
+
+  .carte-total{
+    margin-top:20px; padding:22px 26px; border-radius:14px; background:var(--gold-soft);
+    border:1px solid rgba(240,169,62,0.3);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  }
+  .carte-total .label{ font-size:14px; color:var(--ink-dim); }
+  .carte-total .value{ font-family:var(--serif); font-size:24px; color:var(--gold); }
+  .carte-total .value s{ color:var(--ink-faint); font-size:16px; margin-right:10px; }
+
+  /* ---------- SOCIAL MEDIA TIERS (replaces single Instagram card) ---------- */
+  .carte-card--tiers{ grid-column: span 1; display:flex; flex-direction:column; }
+  .carte-card--tiers h3{ margin-top:14px; }
+  .tier-note{ font-size:12.5px; color:var(--ink-faint); margin-top:6px; line-height:1.5; }
+  .tier-list{ margin-top:18px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .tier{
+    border:1px solid var(--line); border-radius:10px; padding:14px 16px;
+    display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+  }
+  .tier--mid{ border-color:rgba(232,52,140,0.35); background:var(--magenta-soft); }
+  .tier-left .tier-name{ font-size:13.5px; font-weight:600; }
+  .tier-left .tier-desc{ font-size:12px; color:var(--ink-faint); margin-top:4px; line-height:1.5; }
+  .tier-right{ text-align:right; white-space:nowrap; }
+  .tier-right .tier-price{ font-family:var(--serif); font-size:17px; }
+  .tier-right .tier-unit{ font-size:10.5px; color:var(--ink-faint); }
+
+  @media (max-width: 1080px){
+    .carte-grid{ grid-template-columns:1fr 1fr; }
+    .carte-card--tiers{ grid-column: 1 / -1; }
+  }
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-table{ width:100%; border-collapse:collapse; border:1px solid var(--line-strong); border-radius:16px; overflow:hidden; }
+  .compare-table th, .compare-table td{ padding:16px 20px; text-align:left; border-bottom:1px solid var(--line); font-size:14px; }
+  .compare-table th{ font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); background:var(--bg-soft); font-weight:500; }
+  .compare-table td:not(:first-child), .compare-table th:not(:first-child){ text-align:center; }
+  .compare-table td:first-child{ color:var(--ink-dim); }
+  .compare-table tbody tr:last-child td{ border-bottom:none; }
+  .compare-table .col-hero{ background: rgba(232,52,140,0.06); }
+  .check{ color:var(--gold); font-size:16px; }
+  .dash{ color:var(--ink-faint); }
+
+  /* ---------- TIMELINE / NEXT STEPS ---------- */
+  .steps{ display:flex; flex-direction:column; gap:0; }
+  .step{ display:grid; grid-template-columns:90px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--line); }
+  .step:last-child{ border-bottom:none; }
+  .step-num{ font-family:var(--serif); font-size:32px; color:var(--ink-faint); font-style:italic; }
+  .step-title{ font-size:16px; font-weight:600; }
+  .step-sub{ font-size:13.5px; color:var(--ink-faint); margin-top:4px; font-family:var(--mono); letter-spacing:0.02em; }
+
+  /* ---------- CLOSING ---------- */
+  .closing{ padding:100px 0 70px; text-align:center; }
+  .closing h2{
+    font-family:var(--serif); font-weight:500; font-style:italic; font-size:clamp(26px,3.6vw,38px);
+    max-width:720px; margin:0 auto; line-height:1.3; color:var(--ink);
+  }
+  .closing .closing-line{ width:60px; height:1px; background:var(--magenta); margin:32px auto; }
+  .closing-sub{ color:var(--ink-faint); font-size:14px; max-width:480px; margin:0 auto; }
+  footer{ text-align:center; padding:40px 0; color:var(--ink-faint); font-size:12px; font-family:var(--mono); border-top:1px solid var(--line); }
+
+
+  /* ---------- AJUSTES VISUAIS VERDE + DOURADO NEON ---------- */
+  body{
+    background:
+      radial-gradient(ellipse 900px 560px at 14% -8%, rgba(0,255,138,0.14), transparent 62%),
+      radial-gradient(ellipse 760px 520px at 100% 18%, rgba(246,211,107,0.12), transparent 58%),
+      linear-gradient(180deg, #020f0a 0%, #03160e 48%, #020d09 100%);
+  }
+
+  body::before{
+    background:
+      radial-gradient(ellipse 900px 600px at 15% -5%, rgba(0,255,138,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 20%, rgba(246,211,107,0.12), transparent 60%);
+  }
+
+  .eyebrow,
+  .section-tag,
+  .path-kicker{ color:var(--gold); text-shadow:0 0 16px rgba(246,211,107,0.35); }
+
+  h1 em{
+    background:linear-gradient(100deg, var(--magenta), #fff2a8);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  .paths{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:18px;
+    border:0;
+    overflow:visible;
+  }
+
+  .path{
+    min-width:0;
+    border:1px solid var(--line);
+    border-right:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(11,45,31,0.98), rgba(6,27,18,0.98));
+    box-shadow:0 20px 60px rgba(0,0,0,0.24);
+  }
+
+  .path:last-child{ border-right:1px solid var(--line); }
+
+  .path--hero{
+    background:linear-gradient(160deg, rgba(16,61,38,0.98) 0%, rgba(7,37,25,0.98) 58%, rgba(27,31,14,0.98) 100%);
+    border-color:var(--line-strong);
+    padding-top:52px;
+    box-shadow:0 0 0 1px rgba(246,211,107,0.15), 0 26px 80px -28px rgba(0,255,138,0.55), 0 0 44px rgba(246,211,107,0.10);
+  }
+
+  .path--hero::before{
+    background:linear-gradient(100deg, var(--magenta), var(--gold));
+    color:#03120b;
+    border-radius:17px 17px 0 0;
+    font-weight:700;
+  }
+
+  .path-desc{ min-height:92px; color:var(--ink-dim); }
+  .price-value,
+  .carte-price,
+  .carte-total .value,
+  .anchor-num{ color:#fff2a8; text-shadow:0 0 16px rgba(246,211,107,0.22); }
+
+  .path-list li::before{ content:"-"; color:var(--magenta); text-shadow:0 0 12px rgba(0,255,138,0.75); }
+  .path--hero .path-list li::before{ color:var(--gold); text-shadow:0 0 12px rgba(246,211,107,0.75); }
+
+  .path-cta,
+  .carte-cta,
+  .closing-cta{
+    appearance:none;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    text-align:center;
+    padding:14px 16px;
+    border-radius:10px;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    border:1px solid rgba(246,211,107,0.45);
+    color:#fff2a8;
+    background:rgba(246,211,107,0.06);
+    cursor:pointer;
+    transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+
+  .path-cta:hover,
+  .carte-cta:hover,
+  .closing-cta:hover{
+    transform:translateY(-1px);
+    border-color:var(--gold);
+    box-shadow:0 0 22px rgba(246,211,107,0.22), 0 0 28px rgba(0,255,138,0.12);
+    background:rgba(246,211,107,0.10);
+  }
+
+  .path--hero .path-cta,
+  .closing-cta{
+    background:linear-gradient(100deg, var(--magenta), var(--gold));
+    color:#03120b;
+    border:none;
+    font-weight:800;
+    box-shadow:0 0 24px rgba(0,255,138,0.22), 0 0 34px rgba(246,211,107,0.18);
+  }
+
+  .carte-card{
+    background:linear-gradient(180deg, rgba(11,45,31,0.95), rgba(6,27,18,0.95));
+    display:flex;
+    flex-direction:column;
+  }
+
+  .carte-card ul,
+  .tier-list{ flex:1; }
+  .carte-cta{ margin-top:18px; font-size:11.5px; }
+  .carte-icon{ color:var(--gold); text-shadow:0 0 12px rgba(246,211,107,0.35); }
+  .carte-card li::before{ content:"*"; color:var(--magenta); }
+  .tier--mid{ border-color:rgba(246,211,107,0.45); background:rgba(246,211,107,0.10); }
+  .tier-name span{ color:var(--gold) !important; }
+  .check{ color:var(--magenta); text-shadow:0 0 10px rgba(0,255,138,0.45); }
+  .closing-cta{ width:min(100%, 360px); margin:26px auto 0; }
+
+  @media (max-width:1080px){
+    .paths{ grid-template-columns:1fr; }
+    .path-desc{ min-height:0; }
+  }
+  @media (max-width: 880px){
+    .paths{ grid-template-columns:1fr; border-radius:18px; }
+    .path{ border-right:none; border-bottom:1px solid var(--line); }
+    .path--hero{ order:-1; }
+    .carte-grid{ grid-template-columns:1fr; }
+    .compare-table{ font-size:12px; }
+    .compare-table th, .compare-table td{ padding:12px 10px; }
+    .hero{ padding:70px 0 60px; }
+    .section{ padding:60px 0; }
+  }
+
+
+  /* ---------- APRESENTAÇÃO CONSULTIVA ---------- */
+  .decision-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:18px;
+  }
+
+  .decision-card,
+  .process-column,
+  .impact-card,
+  .example-card{
+    min-width:0;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(11,45,31,0.95), rgba(6,27,18,0.95));
+    box-shadow:0 20px 60px rgba(0,0,0,0.20);
+  }
+
+  .decision-card{ padding:28px 24px; display:flex; flex-direction:column; gap:16px; }
+  .decision-card--highlight{ border-color:var(--line-strong); box-shadow:0 0 0 1px rgba(246,211,107,0.12), 0 24px 70px -34px rgba(0,255,138,0.7); }
+  .decision-label{ font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); }
+  .decision-card h3{ font-family:var(--serif); font-size:24px; line-height:1.15; }
+  .decision-card p{ color:var(--ink-dim); font-size:14px; line-height:1.6; }
+  .decision-fit{ margin-top:auto; padding-top:16px; border-top:1px solid var(--line); }
+  .decision-fit span{ display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:7px; }
+  .decision-fit strong{ color:#fff2a8; font-size:14px; }
+
+  .process-board{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:18px; }
+  .process-column{ padding:26px 22px; }
+  .process-column h3{ font-family:var(--serif); font-size:22px; margin-bottom:18px; }
+  .phase-list{ display:flex; flex-direction:column; gap:12px; }
+  .phase{ display:grid; grid-template-columns:34px 1fr; gap:12px; padding:14px 0; border-top:1px solid var(--line); }
+  .phase:first-child{ border-top:none; padding-top:0; }
+  .phase-num{ width:30px; height:30px; border-radius:999px; display:flex; align-items:center; justify-content:center; background:rgba(246,211,107,0.12); color:var(--gold); font-family:var(--mono); font-size:12px; }
+  .phase-title{ font-size:14px; font-weight:700; }
+  .phase-text{ margin-top:4px; color:var(--ink-faint); font-size:12.5px; line-height:1.45; }
+
+  .impact-layout{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:18px; align-items:stretch; }
+  .impact-card{ padding:28px 24px; }
+  .impact-card h3{ font-family:var(--serif); font-size:22px; margin-bottom:18px; }
+  .bar-row{ display:grid; grid-template-columns:150px 1fr 54px; gap:14px; align-items:center; margin-top:16px; }
+  .bar-label{ color:var(--ink-dim); font-size:13.5px; }
+  .bar-track{ height:10px; border-radius:999px; background:rgba(245,255,247,0.10); overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:999px; background:linear-gradient(90deg, var(--magenta), var(--gold)); box-shadow:0 0 18px rgba(0,255,138,0.35); }
+  .bar-value{ font-family:var(--mono); color:var(--gold); font-size:12px; text-align:right; }
+
+  .example-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+  .example-card{ padding:18px 18px; }
+  .example-card h4{ font-size:14px; margin-bottom:8px; color:#fff2a8; }
+  .example-card p{ color:var(--ink-dim); font-size:13px; line-height:1.55; }
+
+  @media (max-width:1080px){
+    .decision-grid,
+    .process-board,
+    .impact-layout{ grid-template-columns:1fr; }
+    .bar-row{ grid-template-columns:120px 1fr 48px; }
+  }
+
+  @media (max-width:540px){
+    .bar-row{ grid-template-columns:1fr; gap:8px; }
+    .bar-value{ text-align:left; }
+  }
+
+  /* ---------- CONVERSÃO E QUEBRA DE OBJEÇÕES ---------- */
+  .choice-table,
+  .proof-grid,
+  .deliverables-grid,
+  .faq-grid{
+    display:grid;
+    gap:18px;
+  }
+
+  .choice-table{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
+  .choice-card,
+  .proof-card,
+  .deliverable-card,
+  .faq-card,
+  .assurance-box{
+    min-width:0;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(11,45,31,0.95), rgba(6,27,18,0.95));
+    box-shadow:0 20px 60px rgba(0,0,0,0.18);
+  }
+
+  .choice-card{ padding:26px 22px; display:flex; flex-direction:column; gap:14px; }
+  .choice-card h3,
+  .proof-card h3,
+  .deliverable-card h3,
+  .faq-card h3{ font-family:var(--serif); font-size:22px; line-height:1.15; }
+  .choice-card p,
+  .proof-card p,
+  .faq-card p{ color:var(--ink-dim); font-size:14px; line-height:1.6; }
+  .choice-chip{ align-self:flex-start; padding:7px 10px; border-radius:999px; background:rgba(246,211,107,0.12); color:var(--gold); font-family:var(--mono); font-size:10.5px; letter-spacing:0.07em; text-transform:uppercase; }
+  .choice-result{ margin-top:auto; padding-top:16px; border-top:1px solid var(--line); color:#fff2a8; font-weight:700; }
+
+  .proof-grid{ grid-template-columns:1fr 1fr; }
+  .proof-card{ padding:28px 24px; }
+  .proof-list{ list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:18px; }
+  .proof-list li{ display:flex; gap:10px; color:var(--ink-dim); font-size:14px; line-height:1.45; }
+  .proof-list li::before{ content:"-"; color:var(--magenta); text-shadow:0 0 12px rgba(0,255,138,0.65); flex-shrink:0; }
+  .proof-card--after{ border-color:var(--line-strong); }
+  .proof-card--after .proof-list li::before{ color:var(--gold); text-shadow:0 0 12px rgba(246,211,107,0.75); }
+
+  .deliverables-grid{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
+  .deliverable-card{ padding:26px 22px; }
+  .deliverable-card ul{ list-style:none; margin-top:16px; display:flex; flex-direction:column; gap:10px; }
+  .deliverable-card li{ position:relative; padding-left:16px; color:var(--ink-dim); font-size:13.5px; line-height:1.5; }
+  .deliverable-card li::before{ content:"*"; position:absolute; left:0; color:var(--gold); }
+
+  .faq-grid{ grid-template-columns:1fr 1fr; }
+  .faq-card{ padding:24px 22px; }
+  .faq-card h3{ font-size:19px; margin-bottom:10px; }
+
+  .assurance-box{ margin-top:22px; padding:24px 26px; display:flex; justify-content:space-between; align-items:center; gap:22px; border-color:var(--line-strong); }
+  .assurance-box strong{ font-family:var(--serif); font-size:24px; color:#fff2a8; }
+  .assurance-box p{ color:var(--ink-dim); font-size:14px; line-height:1.6; max-width:720px; }
+
+  @media (max-width:1080px){
+    .choice-table,
+    .proof-grid,
+    .deliverables-grid,
+    .faq-grid{ grid-template-columns:1fr; }
+    .assurance-box{ align-items:flex-start; flex-direction:column; }
+  }
+
+  /* ---------- CAMADA PERSONALIZADA ---------- */
+  .case-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:18px; align-items:stretch; }
+  .case-card,
+  .recommendation-card,
+  .roadmap-card{
+    min-width:0;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg, rgba(11,45,31,0.96), rgba(6,27,18,0.96));
+    box-shadow:0 20px 60px rgba(0,0,0,0.20);
+  }
+  .case-card{ padding:30px 26px; }
+  .case-card h3,
+  .recommendation-card h3,
+  .roadmap-card h3{ font-family:var(--serif); font-size:24px; line-height:1.15; margin-bottom:14px; }
+  .case-card p,
+  .recommendation-card p,
+  .roadmap-card p{ color:var(--ink-dim); font-size:14.5px; line-height:1.65; }
+  .case-list{ list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:20px; }
+  .case-list li{ display:flex; gap:10px; color:var(--ink-dim); font-size:14px; line-height:1.45; }
+  .case-list li::before{ content:"-"; color:var(--gold); flex-shrink:0; text-shadow:0 0 12px rgba(246,211,107,0.75); }
+  .recommendation-card{ padding:30px 26px; border-color:var(--line-strong); }
+  .recommendation-badge{ display:inline-flex; padding:8px 11px; border-radius:999px; background:linear-gradient(100deg, var(--magenta), var(--gold)); color:#03120b; font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; margin-bottom:16px; }
+  .recommendation-options{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:22px; }
+  .recommendation-option{ padding:16px; border:1px solid var(--line); border-radius:14px; background:rgba(2,15,10,0.24); }
+  .recommendation-option strong{ display:block; color:#fff2a8; margin-bottom:6px; }
+  .recommendation-option span{ color:var(--ink-faint); font-size:12.5px; line-height:1.45; }
+  .roadmap-grid{ display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px; margin-top:22px; }
+  .roadmap-card{ padding:20px 18px; }
+  .roadmap-num{ font-family:var(--mono); color:var(--gold); font-size:12px; margin-bottom:10px; }
+  .roadmap-card h3{ font-size:19px; margin-bottom:10px; }
+  .ethics-note{ margin-top:22px; padding:20px 22px; border-radius:16px; border:1px solid rgba(246,211,107,0.32); background:rgba(246,211,107,0.09); color:var(--ink-dim); font-size:14px; line-height:1.6; }
+  .ethics-note strong{ color:#fff2a8; }
+  @media (max-width:1080px){ .case-grid, .roadmap-grid{ grid-template-columns:1fr; } .recommendation-options{ grid-template-columns:1fr; } }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+
+<div class="wrap hero">
+  <span class="eyebrow">Proposta de Parceria Estratégica</span>
+  <h1>Um caminho para transformar sua <em>presença digital</em> em uma nova frente de renda.</h1>
+  <p class="hero-sub">A ideia aqui é reduzir a dependência exclusiva do consultório presencial, criar mais clareza para o digital e construir produtos educativos que possam gerar receita além da agenda local.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><div class="meta-label">Formatos</div><div class="meta-value">3 caminhos</div></div>
+    <div class="meta-item"><div class="meta-label">Foco</div><div class="meta-value">Crescimento digital</div></div>
+    <div class="meta-item"><div class="meta-label">Validade da proposta</div><div class="meta-value">15 dias</div></div>
+  </div>
+</div>
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">00 — Aplicando ao seu caso</span>
+    <h2>O ponto central não parece ser falta de posts. É falta de uma frente digital estruturada.</h2>
+    <p>Pelo que você trouxe, o momento pede mais do que artes bonitas: precisa de direção, produto, conteúdo vivo e uma estratégia que não dependa apenas do movimento do consultório na sua cidade.</p>
+  </div>
+
+  <div class="case-grid">
+    <div class="case-card">
+      <h3>O cenário que apareceu na conversa</h3>
+      <p>Você está em uma cidade pequena, com queda de procura no inverno, vivendo principalmente do consultório e sentindo que perdeu intensidade depois de um período difícil. Isso torna o digital menos um extra e mais uma alternativa de estabilidade.</p>
+      <ul class="case-list">
+        <li>Dependência alta da agenda presencial do consultório.</li>
+        <li>Sazonalidade forte no inverno da região sul.</li>
+        <li>Conteúdo anterior muito engessado, sem reação a assuntos do momento.</li>
+        <li>Desejo de criar produtos online para aumentar o ganho mensal.</li>
+      </ul>
+    </div>
+
+    <div class="recommendation-card">
+      <span class="recommendation-badge">Recomendação estratégica</span>
+      <h3>Para esse momento, o ideal é combinar produto digital com reposicionamento de conteúdo.</h3>
+      <p>O caminho mais forte é construir uma presença que gere confiança, aqueça o público e leve para uma oferta digital educativa. A escolha entre mentoria e agência depende de quanto você quer executar por conta própria.</p>
+      <div class="recommendation-options">
+        <div class="recommendation-option"><strong>Se quiser aprender</strong><span>Mentoria Estratégica para criar método, produto e rotina com sua execução.</span></div>
+        <div class="recommendation-option"><strong>Se quiser delegar</strong><span>Agência Completa para assumir conteúdo, funil, página e produto com você na direção técnica.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="roadmap-grid">
+    <div class="roadmap-card"><div class="roadmap-num">01</div><h3>Reposicionar</h3><p>Organizar a comunicação para falar com quem precisa voltar a cuidar da alimentação, mesmo em fases de desânimo.</p></div>
+    <div class="roadmap-card"><div class="roadmap-num">02</div><h3>Ativar conteúdo vivo</h3><p>Criar posts planejados, mas com espaço para temas quentes: inverno, compulsão, rotina, frio, culpa e recomeço.</p></div>
+    <div class="roadmap-card"><div class="roadmap-num">03</div><h3>Criar produto educativo</h3><p>Desenvolver um material digital seguro, como guia alimentar, desafio ou programa introdutório, sem prometer dieta individualizada.</p></div>
+    <div class="roadmap-card"><div class="roadmap-num">04</div><h3>Vender pelo funil</h3><p>Conectar conteúdo, WhatsApp, página simples e campanha para transformar interesse em compra ou atendimento.</p></div>
+  </div>
+
+  <div class="ethics-note"><strong>Cuidado importante:</strong> em vez de vender “dietas padrões”, a comunicação deve posicionar o produto como material educativo, guia alimentar, desafio ou programa introdutório. Isso preserva a percepção profissional e evita parecer uma solução genérica para algo que é individual.</div>
+</div>
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">01 — Visão geral</span>
+    <h2>Antes dos valores, a decisão principal é o modelo de crescimento.</h2>
+    <p>A proposta foi organizada em três caminhos para acompanhar momentos diferentes do negócio: aprender a executar, resolver uma frente específica ou delegar uma operação completa.</p>
+  </div>
+
+  <div class="decision-grid">
+    <div class="decision-card">
+      <span class="decision-label">Aprender com direção</span>
+      <h3>Mentoria Estratégica</h3>
+      <p>Você mantém a execução dentro do negócio, mas passa a ter método, prioridade e revisão para não produzir conteúdo no improviso.</p>
+      <div class="decision-fit"><span>Melhor para</span><strong>Quem tem tempo para executar, mas precisa de clareza e método.</strong></div>
+    </div>
+
+    <div class="decision-card decision-card--highlight">
+      <span class="decision-label">Delegar crescimento</span>
+      <h3>Agência Completa</h3>
+      <p>A estratégia, os canais e os ativos digitais passam a trabalhar juntos. É o caminho para transformar marketing em operação recorrente.</p>
+      <div class="decision-fit"><span>Melhor para</span><strong>Quem quer consistência, integração e acompanhamento por ciclo de 8 meses.</strong></div>
+    </div>
+
+    <div class="decision-card">
+      <span class="decision-label">Resolver uma frente</span>
+      <h3>Serviços Separados</h3>
+      <p>Você escolhe uma área específica para destravar agora, como social media, site, SEO ou produtos digitais, sem contratar a operação inteira.</p>
+      <div class="decision-fit"><span>Melhor para</span><strong>Quem tem uma demanda clara e quer começar por módulo.</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">02 — Como funciona</span>
+    <h2>O processo muda conforme o nível de envolvimento.</h2>
+    <p>A diferença entre os caminhos não é apenas o volume de entregas. É principalmente quem pensa, quem executa e como as decisões são acompanhadas.</p>
+  </div>
+
+  <div class="process-board">
+    <div class="process-column">
+      <h3>Mentoria</h3>
+      <div class="phase-list">
+        <div class="phase"><div class="phase-num">1</div><div><div class="phase-title">Diagnóstico</div><div class="phase-text">Entendemos posicionamento, canais atuais, dificuldades e prioridades.</div></div></div>
+        <div class="phase"><div class="phase-num">2</div><div><div class="phase-title">Plano mensal</div><div class="phase-text">Definimos temas, formatos, rotina de conteúdo e próximos ativos.</div></div></div>
+        <div class="phase"><div class="phase-num">3</div><div><div class="phase-title">Execução pelo cliente</div><div class="phase-text">Você produz com orientação e recebe revisão de peças, roteiros e decisões.</div></div></div>
+        <div class="phase"><div class="phase-num">4</div><div><div class="phase-title">Ajustes guiados</div><div class="phase-text">Acompanhamos evolução e corrigimos rota nos encontros recorrentes.</div></div></div>
+      </div>
+    </div>
+
+    <div class="process-column">
+      <h3>Agência Completa</h3>
+      <div class="phase-list">
+        <div class="phase"><div class="phase-num">1</div><div><div class="phase-title">Imersão estratégica</div><div class="phase-text">Mapeamos oferta, público, canais, oportunidades e gargalos comerciais.</div></div></div>
+        <div class="phase"><div class="phase-num">2</div><div><div class="phase-title">Plano de 90 dias</div><div class="phase-text">Organizamos conteúdo, site, funil, produtos digitais e metas de evolução.</div></div></div>
+        <div class="phase"><div class="phase-num">3</div><div><div class="phase-title">Execução integrada</div><div class="phase-text">Produzimos e conectamos as frentes para evitar retrabalho e mensagens soltas.</div></div></div>
+        <div class="phase"><div class="phase-num">4</div><div><div class="phase-title">Otimização mensal</div><div class="phase-text">Lemos resultados, ajustamos prioridades e refinamos a estratégia durante 8 meses.</div></div></div>
+      </div>
+    </div>
+
+    <div class="process-column">
+      <h3>Serviços Separados</h3>
+      <div class="phase-list">
+        <div class="phase"><div class="phase-num">1</div><div><div class="phase-title">Escolha do módulo</div><div class="phase-text">Definimos qual frente precisa ser resolvida primeiro.</div></div></div>
+        <div class="phase"><div class="phase-num">2</div><div><div class="phase-title">Briefing objetivo</div><div class="phase-text">Coletamos informações essenciais para executar sem abrir todas as frentes.</div></div></div>
+        <div class="phase"><div class="phase-num">3</div><div><div class="phase-title">Entrega focada</div><div class="phase-text">Atuamos no módulo contratado com escopo e prioridade claros.</div></div></div>
+        <div class="phase"><div class="phase-num">4</div><div><div class="phase-title">Próximo passo</div><div class="phase-text">Após a entrega, avaliamos se faz sentido adicionar outro módulo ou integrar tudo.</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">03 — Benefícios e exemplos</span>
+    <h2>Quanto mais integrado o trabalho, maior a clareza da operação.</h2>
+    <p>Os gráficos abaixo mostram a lógica da proposta: a mentoria aumenta autonomia, os módulos resolvem pontos específicos e a agência completa entrega maior integração.</p>
+  </div>
+
+  <div class="impact-layout">
+    <div class="impact-card">
+      <h3>Comparativo de impacto</h3>
+      <div class="bar-row"><div class="bar-label">Autonomia do cliente</div><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div><div class="bar-value">Mentoria</div></div>
+      <div class="bar-row"><div class="bar-label">Velocidade de entrega</div><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><div class="bar-value">Módulos</div></div>
+      <div class="bar-row"><div class="bar-label">Integração estratégica</div><div class="bar-track"><div class="bar-fill" style="width:98%"></div></div><div class="bar-value">Agência</div></div>
+      <div class="bar-row"><div class="bar-label">Previsibilidade</div><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div><div class="bar-value">Agência</div></div>
+    </div>
+
+    <div class="impact-card">
+      <h3>Exemplos práticos</h3>
+      <div class="example-grid">
+        <div class="example-card"><h4>Mentoria</h4><p>Você aprende a montar calendário editorial, revisar roteiros e criar uma rotina de publicação com menos tentativa e erro.</p></div>
+        <div class="example-card"><h4>Serviço separado</h4><p>Seu site pode ser otimizado para conversão enquanto a equipe atual mantém as redes sociais.</p></div>
+        <div class="example-card"><h4>Agência completa</h4><p>Um conteúdo publicado no Instagram pode levar para uma landing page, capturar leads e alimentar uma oferta digital.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">04 — Qual caminho escolher</span>
+    <h2>Se você está em dúvida, comece pelo problema que mais pesa hoje.</h2>
+    <p>Esta parte ajuda a escolher sem comparar apenas preço. O melhor caminho depende de tempo disponível, urgência da entrega e nível de responsabilidade que você quer manter dentro do negócio.</p>
+  </div>
+
+  <div class="choice-table">
+    <div class="choice-card">
+      <span class="choice-chip">Tenho tempo, falta método</span>
+      <h3>Escolha Mentoria</h3>
+      <p>Você quer aprender a organizar conteúdo, melhorar decisões e evoluir com acompanhamento, mantendo a execução com você ou sua equipe.</p>
+      <div class="choice-result">Melhor escolha: Mentoria Estratégica</div>
+    </div>
+
+    <div class="choice-card">
+      <span class="choice-chip">Tenho uma dor específica</span>
+      <h3>Escolha um módulo</h3>
+      <p>Você precisa resolver uma frente clara agora, como site, SEO, social media ou produto digital, sem mexer em toda a operação.</p>
+      <div class="choice-result">Melhor escolha: Serviços Separados</div>
+    </div>
+
+    <div class="choice-card">
+      <span class="choice-chip">Quero delegar com consistência</span>
+      <h3>Escolha Agência Completa</h3>
+      <p>Você quer tirar o marketing do improviso, conectar canais e ter uma operação acompanhada por um ciclo estratégico de 8 meses.</p>
+      <div class="choice-result">Melhor escolha: Agência Completa</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">05 — Antes e depois</span>
+    <h2>A proposta não é só produzir mais. É trocar esforço solto por direção.</h2>
+    <p>O objetivo é diminuir retrabalho, melhorar a clareza da oferta e criar uma rotina comercial mais organizada.</p>
+  </div>
+
+  <div class="proof-grid">
+    <div class="proof-card">
+      <h3>Antes</h3>
+      <ul class="proof-list">
+        <li>Conteúdo publicado sem relação clara com oferta e venda.</li>
+        <li>Site ou página funcionando como cartão de visita, não como conversão.</li>
+        <li>Ideias boas, mas sem sequência, prioridade ou acompanhamento.</li>
+        <li>Decisões tomadas no improviso, conforme a urgência da semana.</li>
+      </ul>
+    </div>
+
+    <div class="proof-card proof-card--after">
+      <h3>Depois</h3>
+      <ul class="proof-list">
+        <li>Conteúdo conectado ao posicionamento, funil e produtos.</li>
+        <li>Canais digitais com função clara dentro da jornada do cliente.</li>
+        <li>Plano de ação com entregas, responsáveis e leitura mensal.</li>
+        <li>Mais previsibilidade para decidir o próximo passo com base em evolução real.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">06 — O que você recebe</span>
+    <h2>Entregáveis concretos para cada tipo de contratação.</h2>
+    <p>Assim fica mais fácil entender o que muda na prática entre orientação, execução por módulo e operação completa.</p>
+  </div>
+
+  <div class="deliverables-grid">
+    <div class="deliverable-card">
+      <h3>Na Mentoria</h3>
+      <ul>
+        <li>Diagnóstico inicial do momento digital.</li>
+        <li>Plano mensal de conteúdo e prioridades.</li>
+        <li>Revisão de roteiros, peças e ideias.</li>
+        <li>Orientação sobre funil e produtos digitais.</li>
+        <li>4 encontros mensais + suporte por WhatsApp.</li>
+      </ul>
+    </div>
+
+    <div class="deliverable-card">
+      <h3>Na Agência Completa</h3>
+      <ul>
+        <li>Imersão estratégica e plano de 90 dias.</li>
+        <li>Calendário editorial mensal.</li>
+        <li>Execução integrada de conteúdo, site, funil e produtos.</li>
+        <li>Vídeos com IA para Reels e YouTube.</li>
+        <li>Relatório mensal com leitura estratégica.</li>
+      </ul>
+    </div>
+
+    <div class="deliverable-card">
+      <h3>Nos Módulos</h3>
+      <ul>
+        <li>Escopo definido para a frente escolhida.</li>
+        <li>Social media, Site & SEO ou Produtos Digitais.</li>
+        <li>Entrega focada no problema prioritário.</li>
+        <li>Possibilidade de combinar módulos conforme necessidade.</li>
+        <li>Boa entrada para testar a parceria.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">07 — Dúvidas comuns</span>
+    <h2>Objeções que normalmente aparecem antes de contratar.</h2>
+    <p>Respondê-las antes da decisão evita uma escolha baseada só em preço e ajuda a selecionar o caminho mais adequado.</p>
+  </div>
+
+  <div class="faq-grid">
+    <div class="faq-card"><h3>E se eu ainda não souber o que preciso?</h3><p>A conversa de alinhamento serve justamente para validar o caminho. Se o diagnóstico mostrar que outro formato faz mais sentido, ajustamos a recomendação antes de iniciar.</p></div>
+    <div class="faq-card"><h3>Preciso contratar tudo de uma vez?</h3><p>Não. Você pode começar por mentoria ou por um módulo específico. A agência completa é indicada quando a prioridade é integrar as frentes e sustentar crescimento contínuo.</p></div>
+    <div class="faq-card"><h3>Por que contrato de 8 meses na agência?</h3><p>Porque crescimento digital precisa de ciclo: diagnóstico, implementação, consistência, otimização e leitura real. Menos que isso costuma gerar execução sem maturação.</p></div>
+    <div class="faq-card"><h3>E se eu já tiver alguém cuidando das redes?</h3><p>Podemos atuar em estratégia, site, funil, produtos digitais ou orientação da equipe atual. A proposta se adapta ao que já existe, sem duplicar esforço.</p></div>
+  </div>
+
+  <div class="assurance-box">
+    <strong>Começo com segurança</strong>
+    <p>Antes de iniciar, fazemos uma conversa de alinhamento para confirmar se o pacote escolhido realmente combina com o momento do negócio. A ideia é vender o caminho certo, não empurrar o maior pacote.</p>
+  </div>
+</div>
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">08 — Valores e caminhos</span>
+    <h2>Agora sim: os pacotes, valores e escopos de contratação.</h2>
+    <p>Depois de entender o papel de cada caminho, a escolha fica mais simples: você pode aprender a executar, contratar uma frente específica ou delegar uma operação estratégica completa.</p>
+  </div>
+
+  <div class="paths">
+    <!-- MENTORIA -->
+    <div class="path">
+      <span class="path-kicker">Caminho 01</span>
+      <div class="path-name">Mentoria Estratégica</div>
+      <p class="path-desc">Eu te ensino a pensar e executar sua própria presença digital — conteúdo, funil e produtos digitais — com encontros recorrentes de orientação direta.</p>
+      <div class="path-price">
+        <div class="price-label">Investimento</div>
+        <div class="price-value">R$ 890<small>/mês</small></div>
+        <div class="price-note">4 encontros mensais + suporte por WhatsApp</div>
+      </div>
+      <ul class="path-list">
+        <li>Você executa, eu direciono</li>
+        <li>Plano de conteúdo mensal personalizado</li>
+        <li>Revisão de peças e roteiros</li>
+        <li>Orientação sobre produtos digitais</li>
+        <li>Ideal para quem tem tempo, não método</li>
+      </ul>
+      <a class="path-cta" href="https://wa.me/5512988441324?text=Ola%2C%20tenho%20interesse%20no%20pacote%20Mentoria%20Estrategica%20de%20R%24%20890%2Fmes." target="_blank" rel="noopener">Quero aprender a fazer</a>
+    </div>
+
+    <!-- AGÊNCIA COMPLETA -->
+    <div class="path path--hero">
+      <span class="path-kicker">Caminho 02</span>
+      <div class="path-name">Agência Completa</div>
+      <p class="path-desc">Minha agência se torna um braço da sua operação. Eu assumo a estratégia e a execução de ponta a ponta — você foca no atendimento, eu cuido do crescimento.</p>
+      <div class="path-price">
+        <div class="price-label">Investimento</div>
+        <div class="price-value">R$ 2.850<small>/mês</small></div>
+        <div class="price-note">Contrato estratégico de 8 meses, com acompanhamento mensal de evolução</div>
+      </div>
+      <ul class="path-list">
+        <li>Estratégia + execução, integradas e contínuas</li>
+        <li>Conteúdo, site, funil e produtos digitais sob um mesmo eixo</li>
+        <li>Vídeos com IA para Reels e YouTube</li>
+        <li>Relatórios mensais com leitura de resultado, não só número</li>
+        <li>Você decide a direção, eu sustento a operação</li>
+      </ul>
+      <a class="path-cta" href="https://wa.me/5512988441324?text=Ola%2C%20tenho%20interesse%20no%20pacote%20Agencia%20Completa%20de%20R%24%202.850%2Fmes." target="_blank" rel="noopener">Quero a agência como parceira</a>
+    </div>
+
+    <!-- SEPARADOS -->
+    <div class="path">
+      <span class="path-kicker">Caminho 03</span>
+      <div class="path-name">Serviços Separados</div>
+      <p class="path-desc">Você escolhe só a frente que está travando agora — conteúdo, site ou produto digital — e contrata isoladamente, sem compromisso com o resto.</p>
+      <div class="path-price">
+        <div class="price-label">Investimento</div>
+        <div class="price-value">A partir de<br>R$ 790<small>/mês por módulo</small></div>
+        <div class="price-note">Combine quantos módulos quiser</div>
+      </div>
+      <ul class="path-list">
+        <li>Sem dependência entre frentes</li>
+        <li>Contratação por módulo, conforme a frente escolhida</li>
+        <li>Bom ponto de entrada para testar a parceria</li>
+        <li>Soma mais caro que o pacote completo</li>
+      </ul>
+      <a class="path-cta" href="https://wa.me/5512988441324?text=Ola%2C%20tenho%20interesse%20no%20pacote%20Servicos%20Separados%20a%20partir%20de%20R%24%20790%2Fmes%20por%20modulo." target="_blank" rel="noopener">Quero resolver uma frente</a>
+    </div>
+  </div>
+
+  <div class="anchor-strip">
+    <div class="anchor-text"><strong>Por que a Agência Completa custa menos que a soma dos módulos?</strong> Porque estratégia integrada elimina retrabalho — o conteúdo já nasce pensando no funil, e o funil já nasce pensando no produto digital. Separado, cada frente trabalha isolada.</div>
+    <div class="anchor-num">−24% mais barato</div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">09 — Detalhe dos módulos</span>
+    <h2>Serviços separados, módulo por módulo.</h2>
+    <p>Se o momento pede resolver uma frente específica primeiro, aqui está o que cada módulo inclui.</p>
+  </div>
+
+  <div class="carte-grid">
+    <div class="carte-card carte-card--tiers">
+      <div class="carte-icon">◆</div>
+      <h3>Social Media</h3>
+      <p class="tier-note">Gestão de conteúdo para Instagram, com 3 níveis de profundidade — escolha pelo volume e nível de estratégia que seu momento pede.</p>
+      <div class="tier-list">
+        <div class="tier">
+          <div class="tier-left">
+            <div class="tier-name">Entrada</div>
+            <div class="tier-desc">12 posts · legendas · identidade básica</div>
+          </div>
+          <div class="tier-right">
+            <div class="tier-price">R$ 997</div>
+            <div class="tier-unit">/mês</div>
+          </div>
+        </div>
+        <div class="tier tier--mid">
+          <div class="tier-left">
+            <div class="tier-name">Intermediário <span style="color:var(--magenta); font-size:11px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.04em;">· padrão agência</span></div>
+            <div class="tier-desc">20 posts · estratégia · revisão semanal</div>
+          </div>
+          <div class="tier-right">
+            <div class="tier-price">R$ 1.997</div>
+            <div class="tier-unit">/mês</div>
+          </div>
+        </div>
+        <div class="tier">
+          <div class="tier-left">
+            <div class="tier-name">Premium</div>
+            <div class="tier-desc">conteúdo diário · campanhas · consultoria estratégica</div>
+          </div>
+          <div class="tier-right">
+            <div class="tier-price">R$ 3.497+</div>
+            <div class="tier-unit">/mês</div>
+          </div>
+        </div>
+      </div>
+      <a class="carte-cta" href="https://wa.me/5512988441324?text=Ola%2C%20tenho%20interesse%20no%20pacote%20Social%20Media." target="_blank" rel="noopener">Escolher Social Media</a>
+    </div>
+
+    <div class="carte-card">
+      <div class="carte-icon">◆</div>
+      <h3>Site & SEO</h3>
+      <ul>
+        <li>Otimização de UX e conversão</li>
+        <li>SEO para visibilidade orgânica</li>
+        <li>Atualizações e manutenção de conteúdo</li>
+        <li>Relatório mensal de performance</li>
+      </ul>
+      <div class="carte-price">R$ 790<small>/mês</small></div>
+      <a class="carte-cta" href="https://wa.me/5512988441324?text=Ola%2C%20tenho%20interesse%20no%20pacote%20Site%20e%20SEO%20de%20R%24%20790%2Fmes." target="_blank" rel="noopener">Escolher Site & SEO</a>
+    </div>
+
+    <div class="carte-card">
+      <div class="carte-icon">◆</div>
+      <h3>Produtos Digitais</h3>
+      <ul>
+        <li>Estruturação de infoprodutos e cursos</li>
+        <li>Landing pages de alta conversão</li>
+        <li>Copy persuasivo e funil de venda</li>
+        <li>Materiais para download (lead magnets)</li>
+      </ul>
+      <div class="carte-price">R$ 990<small>/mês</small></div>
+      <a class="carte-cta" href="https://wa.me/5512988441324?text=Ola%2C%20tenho%20interesse%20no%20pacote%20Produtos%20Digitais%20de%20R%24%20990%2Fmes." target="_blank" rel="noopener">Escolher Produtos Digitais</a>
+    </div>
+  </div>
+
+  <div class="carte-total">
+    <div class="label">Social Media (padrão) + Site & SEO + Produtos Digitais, separados</div>
+    <div class="value"><s>R$ 3.777</s> R$ 2.850 na Agência Completa, com tudo integrado</div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">10 — Lado a lado</span>
+    <h2>Comparação direta entre os 3 caminhos.</h2>
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>O que está incluso</th>
+        <th>Mentoria</th>
+        <th class="col-hero">Agência Completa</th>
+        <th>Separados</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Quem executa</td>
+        <td>Você</td>
+        <td class="col-hero">Nós</td>
+        <td>Nós, por módulo</td>
+      </tr>
+      <tr>
+        <td>Estratégia integrada entre canais</td>
+        <td><span class="dash">—</span></td>
+        <td class="col-hero"><span class="check">✓</span></td>
+        <td><span class="dash">—</span></td>
+      </tr>
+      <tr>
+        <td>Produção de vídeo com IA</td>
+        <td>Orientação</td>
+        <td class="col-hero"><span class="check">✓</span></td>
+        <td>Se incluso no módulo</td>
+      </tr>
+      <tr>
+        <td>Relatórios mensais</td>
+        <td><span class="dash">—</span></td>
+        <td class="col-hero"><span class="check">✓</span></td>
+        <td><span class="check">✓</span></td>
+      </tr>
+      <tr>
+        <td>Modelo de parceria</td>
+        <td>Mensal recorrente</td>
+        <td class="col-hero">Contrato estratégico de 8 meses</td>
+        <td>Por módulo contratado</td>
+      </tr>
+      <tr>
+        <td>Investimento mensal</td>
+        <td>R$ 890</td>
+        <td class="col-hero">R$ 2.850</td>
+        <td>Desde R$ 997/módulo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="wrap section">
+  <div class="section-head">
+    <span class="section-tag">11 — Como começamos</span>
+    <h2>Próximos passos, qualquer que seja o caminho.</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div><div class="step-title">Você escolhe o caminho</div><div class="step-sub">Mentoria · Agência Completa · Serviços Separados</div></div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div><div class="step-title">Conversa de alinhamento</div><div class="step-sub">Semana 1 — entendemos seu momento atual</div></div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div><div class="step-title">Auditoria dos canais atuais</div><div class="step-sub">Semana 1–2</div></div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div><div class="step-title">Plano estratégico de 90 dias</div><div class="step-sub">Semana 2–3</div></div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div><div class="step-title">Início da execução</div><div class="step-sub">Semana 3</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap closing">
+  <h2>Não é sobre qual caminho é o certo. É sobre qual combina com o seu momento agora.</h2>
+  <div class="closing-line"></div>
+  <p class="closing-sub">Vamos conversar 15 minutos pra eu te ajudar a decidir?</p>
+  <a class="closing-cta" href="https://wa.me/5512988441324?text=Ola%2C%20quero%20conversar%20sobre%20qual%20pacote%20faz%20mais%20sentido%20para%20meu%20momento." target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+</div>
+
+<footer>PROPOSTA COMERCIAL · VÁLIDA POR 15 DIAS · PAGAMENTO VIA PIX OU TRANSFERÊNCIA</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
